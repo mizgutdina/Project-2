@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Our CSS  -->
+    <!-- <link rel="stylesheet" href="./static/css/style.css" /> -->
+    <style>
+        .jumbotron {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Chicago Beaches</h1>
+        </div>
+        <!-- <input type="button" onclick="CreateTableFromJSON()" value="Create Table From JSON" /> -->
+    <p id="showData"></p>
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table table-striped">
+                    <thead>
+                        <!-- <tr><th>DNA Test ID</th><th>Timestamp</th><th>Beach</th></tr> -->
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="./static/js/table.js"></script>
+</body>
+
+</html>
