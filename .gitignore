@@ -9,3 +9,7 @@ scrape.py
 README.md
 static/js/config.js
 static/js/heatmap.js
+extra/extra.js
+extra/extra2.js
+extra/heatmap.js
+extra/leaflet-heat.js
