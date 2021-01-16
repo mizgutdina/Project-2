@@ -102,3 +102,13 @@ dist
 
 # TernJS port file
 .tern-port
+extra/app.py
+extra/config.py
+extra/extra.js
+extra/extra2.js
+extra/heatmap.js
+extra/index.html
+extra/leaflet-heat.js
+extra/scrape.py
+static/css/style.css
+static/js/config.js
