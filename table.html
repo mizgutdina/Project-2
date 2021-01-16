@@ -1,3 +1,4 @@
+  
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Chicago Beach Lab Data</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <!-- Our CSS  -->
     <!-- <link rel="stylesheet" href="./static/css/style.css" /> -->
@@ -19,15 +20,29 @@
 <body>
     <div class="container">
         <div class="jumbotron">
-            <h1>Chicago Beaches</h1>
+            <h2>Chicago Beach Lab Data</h2>
         </div>
-        <!-- <input type="button" onclick="CreateTableFromJSON()" value="Create Table From JSON" /> -->
     <p id="showData"></p>
         <div class="row">
             <div class="col-md-12">
                 <table class="table table-striped">
                     <thead>
-                        <!-- <tr><th>DNA Test ID</th><th>Timestamp</th><th>Beach</th></tr> -->
+                        <tr>
+                            <th>Test ID</th>
+                            <th>Timestamp</th>
+                            <th>Beach</th>
+                            <th>Sample_1</th>
+                            <th>Sample_2</th>
+                            <th>Mean</th>
+                            <th>Latitude</th>
+                            <th>Longitude</th>
+                            <th>Location</th>
+                            <th>unknown1</th>
+                            <th>unknown2</th>
+                            <th>unknown3</th>
+                            <th>unknown4</th>
+                            <th>unknown5</th>
+                        </tr>
                     </thead>
                     <tbody></tbody>
                 </table>
@@ -35,7 +50,7 @@
         </div>
     </div>
     <script src="https://d3js.org/d3.v5.min.js"></script>
-    <script src="./static/js/table.js"></script>
+    <script src="./static/js/data.js"></script>
 </body>
 
 </html>
