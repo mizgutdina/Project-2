@@ -1,2 +1,11 @@
 
 static/js/leaflet-heat.js
+static/css/style.css
+app.py
+config.py
+index.html
+README.md
+scrape.py
+README.md
+static/js/config.js
+static/js/heatmap.js
