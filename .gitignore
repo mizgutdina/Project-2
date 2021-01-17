@@ -17,3 +17,15 @@ static/.ipynb_checkpoints/project2_database-checkpoint.ipynb
 static/debug.log
 static/project2_database.ipynb
 .ipynb_checkpoints/Daily Weather Data from NOAA-checkpoint.ipynb
+*.ipynb
+*.ipynb
+Daily Weather Data from NOAA.ipynb
+extra/app2.py
+extra/debug.log
+extra/test (1).py
+extra/test.py
+extra/titanic.sqlite
+node.py
+samples.json
+static/__pycache__/scrape.cpython-38.pyc
+Daily Weather Data from NOAA.ipynb
