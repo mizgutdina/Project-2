@@ -32,3 +32,5 @@ Daily Weather Data from NOAA.ipynb
 Daily Weather Data from NOAA.ipynb
 extra/scrape (2).py
 Daily Weather Data from NOAA.ipynb
+extra/get_data.py
+static/js/get_data.js
