@@ -15,7 +15,6 @@ url = 'https://data.cityofchicago.org/resource/2ivx-z93u.json'
 
 # Request the json data
 data = requests.get(url).json()
-# print("requesting json data")
 
 # Connect to a database, will create one if not already available
 db = client.beaches_db
