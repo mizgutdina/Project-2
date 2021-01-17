@@ -1,3 +1,5 @@
+# View mongo database and collection in compass
+
 import requests
 from flask import Flask, render_template, redirect
 import pymongo
