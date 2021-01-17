@@ -35,3 +35,15 @@ Daily Weather Data from NOAA.ipynb
 extra/get_data.py
 static/js/get_data.js
 templates/table.html
+data/.DS_Store
+data/beach-e.-coli-predictions.csv
+data/beach-lab-data.csv
+data/beach-swim-advisories.csv
+data/beach-water-quality-automated-sensors.csv
+data/beach-weather-stations-automated-sensors.csv
+data/parks-chicago-park-district-artworks-current-1.csv
+data/socrata_metadata_beach-e.-coli-predictions.json
+data/socrata_metadata_beach-lab-data.json
+data/socrata_metadata_beach-swim-advisories.json
+data/socrata_metadata_beach-water-quality-automated-sensors.json
+data/socrata_metadata_beach-weather-stations-automated-sensors.json
