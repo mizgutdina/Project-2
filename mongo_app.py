@@ -36,7 +36,7 @@ def render_index():
     # Store the sample collection in a list
     samples = list(db.sample.find())
 
-    # Return template with dict pass in
+    # Return mongo_db.html template with samples list passed in
     return render_template("mongo_db.html", samples=samples)
 
 if __name__ == "__main__":
