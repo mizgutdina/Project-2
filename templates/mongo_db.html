@@ -21,6 +21,8 @@
         <div class="row">
           <div class="col">
             <ul style="list-style: none;">
+              <h3>json data as list</h3>
+
               {% for sample in samples %}
                 <li>
                     id: {{ sample.dna_test_id }}: 
@@ -33,6 +35,7 @@
                     longitude: {{ sample.longitude }}
                   </li>
               {% endfor %}
+              
           </ul>
           </div>
         </div>
