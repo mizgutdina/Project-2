@@ -21,18 +21,15 @@
         <div class="row">
           <div class="col">
             <ul style="list-style: none;">
-              <h3>json data as list</h3>
-
-              {% for sample in samples %}
+              <h3>e_coli prediction as list</h3>
+              {% for prediction in predictions %}
                 <li>
-                    id: {{ sample.dna_test_id }}: 
-                    timestamp: {{ sample.dna_sample_timestamp }}
-                    beach: {{ sample.beach }}
-                    sample 1: {{ sample.dna_sample_1_reading }}
-                    sample 2 {{ sample.dna_sample_2_reading }}
-                    mean: {{ sample.dna_reading_mean }}
-                    latitude: {{ sample.latitude }}
-                    longitude: {{ sample.longitude }}
+                    beach_name: {{ prediction.beach_name }}: 
+                    date: {{ prediction.date }}
+                    prediction_source: {{ prediction.prediction_source }}
+                    predicted_level: {{ prediction.predicted_level }}
+                    latitude {{ prediction.latitude }}
+                    longitude: {{ prediction.longitude }}
                   </li>
               {% endfor %}
               
