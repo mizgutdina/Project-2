@@ -1,29 +1,56 @@
 var readings = [];
 var timestamps = [];
+var beachName = "12th Street"
 
 function buildPlot(){
-    var ctx = d3.select("#myChart");
-    var myLineChart = new Chart(ctx, {
-        type: 'line',
-        data: {
+    var plotData = [
+        {
             x: timestamps,
-            y: readings
+            y: readings,
+            type: 'scatter'
         }
-    })
+    ];
+    var layout = {
+        title: `${beachName} Bacteria Levels`,
+        yaxis: {title: "Enterococci CCE per 100ml of water"},
+        shapes: [{
+            type: 'line',
+            xref: 'paper',
+            x0: 0,
+            y0: 1000,
+            x1: 1,
+            y1: 1000,
+            line: {
+                color: 'rgb(255,0,0',
+                width: 4,
+                dash: 'dot'
+            }
+        }],
+        annotations: [{
+            xref:'paper',
+            yref: 'y',
+            x: 0.5,
+            y: 1000,
+            text: 'Swim Advisories go into effect at 1000 CCE',
+
+        }]
+
+    };
+    Plotly.newPlot('myChart', plotData, layout);
 }
 
 d3.json(url).then(data => {
 
-
     data.forEach((sample) => {
-        if (sample.beach = "12th Street") {
+        if (sample.beach === beachName) {
             readings.push(parseFloat(sample.dna_reading_mean));
             timestamps.push(sample.dna_sample_timestamp);
         };
         
     });
-
-
+    
+    readings.slice(1).slice(-100);
+    timestamps.slice(1).slice(-100);
     console.log(readings);
     console.log(timestamps);
     buildPlot();
