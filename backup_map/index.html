@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Chicago Beach Conditions</title>
+    
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin="" />
+    
+    <!-- Our CSS  -->
+    <link rel="stylesheet" href="./static/css/style.css" />
+
+  </head>  
+
+    <body>
+      
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown button
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </div>
+
+      <!-- Add Jumbotron to Header -->
+      <div class="jumbotron text-center">
+        <h1>Chicago Beach Conditions</h1>
+        
+        <!-- Add a button to activate scraping script -->
+        <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+      </div>      
+
+      <!-- Section for Featured Image and Facts table -->
+      <div class="row" id="mars-featured-image">
+        
+        <div class="col-md-4">
+          <h3>Water Conditions</h3>
+          <h4>Date: </h4>
+          <h4>Water Temperature: </h4>
+        </div>
+
+        <!-- Section for Mars Hemispheres -->
+        <div class="col-md-4">
+          <h3>Weather Conditions</h3>
+          <h4>Date: </h4>
+          <h4>Air Temperature</h4>
+        </div>
+
+        <div class="col-md-4">
+          <h3>Swimming</h3>
+          <h4>Date: </h4>
+          <h4>Advisory: </h4>        
+        </div>
+      </div>
+
+      
+      </div>                         
+              
+        <div id="map"></div>
+
+        <!-- API key -->
+        <script type="text/javascript" src="static/js/config.js"></script>
+
+        <!-- Leaflet JS -->
+        <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js" integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q==" crossorigin=""></script>
+        <!-- D3 CDN -->
+        <script src="https://d3js.org/d3.v4.min.js"></script>
+        <!-- JS -->
+        <script type="text/javascript" src="static/js/logic.js"></script>
+      
+    </body> 
+
+</html>
