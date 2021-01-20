@@ -3,7 +3,7 @@
 var readings = [];
 var timestamps = [];
 var beachName = "Foster";
-
+var query_url = "/dna"
 
 function buildPlot(){
     var plotData = [
@@ -66,7 +66,7 @@ function getData(data){
 };
 
 // API call to return JSON
-d3.json(url).then(getData);
+d3.json(query_url).then(getData);
 
 // d3.selectAll("#selDataset").on("change", updateData);
 
