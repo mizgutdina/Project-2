@@ -2,7 +2,7 @@
 
 var readings = [];
 var timestamps = [];
-var beachName = "Foster";
+var beachName = "Foster"; //default beach name
 var query_url = "/dna"
 
 function buildPlot(){
@@ -43,7 +43,7 @@ function buildPlot(){
         }]
 
     };
-    // creates default plot at div with id #myChart
+    // creates default plot at div with ID: #myChart
     Plotly.newPlot('myChart', plotData, layout);
 };
 

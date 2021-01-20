@@ -10,6 +10,7 @@ d3.json(weather_url).then((data) => {
     var windSpeed = data.wind.speed;
     var cloudCoverage = data.clouds.all;
 
+    // ties weather information to ID: #weather
     d3.select("#weather").append("p").text(`Current Temperature: ${currentTemp}°F`);
     d3.select("#weather").append("p").text(`Feels Like: ${feelsLike}°F`);
     d3.select("#weather").append("p").text(`Wind Speed: ${windSpeed} MPH`);
