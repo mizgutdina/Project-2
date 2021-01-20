@@ -2,7 +2,7 @@
 
 var readings = [];
 var timestamps = [];
-var beachName = "Foster";
+var beachName = "Foster"; //default beach name
 var query_url = "/dna"
 
 function buildPlot(){
@@ -43,7 +43,7 @@ function buildPlot(){
         }]
 
     };
-    // creates default plot at div with id #myChart
+    // creates default plot at div with ID: #myChart
     Plotly.newPlot('myChart', plotData, layout);
 };
 
@@ -68,10 +68,12 @@ function getData(data){
 // API call to return JSON
 d3.json(query_url).then(getData);
 
+// // selects drop down of beaches with ID: #selDataset
 // d3.selectAll("#selDataset").on("change", updateData);
 
+// // updates plot with new data based off of Beach Name
 // function updateData() {
 //    var dropDownMenu = d3.select("#selDataset");
 //    beachName = dropDownMenu.property("value");
-//    Plotly.
+//    Plotly.restyle
 // }
