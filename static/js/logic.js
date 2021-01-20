@@ -16,10 +16,11 @@ var myMap = L.map("map", {
   // var link = "$where=date>'2020-01-01T12:00:00'"
   // url = queryUrl + link 
   
-  var url = "https://data.cityofchicago.org/resource/2ivx-z93u.json"
+  //var url = "https://data.cityofchicago.org/resource/2ivx-z93u.json"
 
   //var url ="https://data.cityofchicago.org/resource/6zsd-86xi.json?$where=date%20between%20%272020-01-10T12:00:00%27%20and%20%272020-01-10T14:00:00%27"
 
+  var url = '/dna'
   d3.json(url, function(response) {
 
     const beachs = {};

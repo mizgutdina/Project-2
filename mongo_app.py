@@ -85,5 +85,9 @@ def test():
 def plot():
     return render_template("table.html")
 
+@app.route("/map")
+def maping():
+    return render_template("indexMap.html")
+
 if __name__ == "__main__":
     app.run(debug=True)
