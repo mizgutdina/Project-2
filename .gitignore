@@ -147,7 +147,7 @@ backup_map/static/js/leaflet-heat.js
 backup_map/static/js/require.js
 GeoApp/routes/geo.route.js
 main.html
-mongo_app.py
+
 test.py
 backup_map/static/js/logic.js
 backup_map/index.html
