@@ -1,5 +1,6 @@
 const city = "chicago";
 
+// needs weatherAPI_KEY from config.js
 const weather_url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${weatherAPI_KEY}&units=imperial`;
 
 // pulls in weather data then appends the information to a div using paragraph tags
