@@ -1,6 +1,9 @@
+// initialize arrays to be plotted and default beach
+
 var readings = [];
 var timestamps = [];
-var beachName = "Oakwood";
+var beachName = "Foster";
+
 
 function buildPlot(){
     var plotData = [
@@ -10,6 +13,8 @@ function buildPlot(){
             type: 'scatter'
         }
     ];
+
+    // chart layout
     var layout = {
         title: `${beachName} Bacteria Levels`,
         yaxis: {title: "Enterococci CCE per 100ml of water"},
@@ -21,11 +26,13 @@ function buildPlot(){
             x1: 1,
             y1: 1000,
             line: {
-                color: 'rgb(255,0,0',
+                color: 'rgb(255,0,0)',
                 width: 4,
                 dash: 'dot'
             }
         }],
+
+        // Creates annotated line to indicate swim advisory level
         annotations: [{
             xref:'paper',
             yref: 'y',
@@ -36,9 +43,11 @@ function buildPlot(){
         }]
 
     };
+    // creates default plot at div with id #myChart
     Plotly.newPlot('myChart', plotData, layout);
 };
 
+// reads bacteria levels and timestamps from returned JSON
 function getData(data){
     data.forEach((sample) => {
         if (sample.beach === beachName) {
@@ -47,14 +56,16 @@ function getData(data){
         };
         
     });
-    
+    // takes the most recent 100 readings, if that many exist
     readings.slice(1).slice(-100);
     timestamps.slice(1).slice(-100);
     console.log(readings);
     console.log(timestamps);
+
     buildPlot();
 };
 
+// API call to return JSON
 d3.json(url).then(getData);
 
 // d3.selectAll("#selDataset").on("change", updateData);
