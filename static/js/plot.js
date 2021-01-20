@@ -1,6 +1,6 @@
 var readings = [];
 var timestamps = [];
-var beachName = "12th Street"
+var beachName = "Oakwood";
 
 function buildPlot(){
     var plotData = [
@@ -37,10 +37,9 @@ function buildPlot(){
 
     };
     Plotly.newPlot('myChart', plotData, layout);
-}
+};
 
-d3.json(url).then(data => {
-
+function getData(data){
     data.forEach((sample) => {
         if (sample.beach === beachName) {
             readings.push(parseFloat(sample.dna_reading_mean));
@@ -54,4 +53,14 @@ d3.json(url).then(data => {
     console.log(readings);
     console.log(timestamps);
     buildPlot();
-})
+};
+
+d3.json(url).then(getData);
+
+// d3.selectAll("#selDataset").on("change", updateData);
+
+// function updateData() {
+//    var dropDownMenu = d3.select("#selDataset");
+//    beachName = dropDownMenu.property("value");
+//    Plotly.
+// }

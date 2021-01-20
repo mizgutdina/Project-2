@@ -119,3 +119,12 @@ extra/leaflet-heat.js
 extra/scrape.py
 static/css/style.css
 static/js/config.js
+GeoJSON.py
+mapCode/staticMap/js/logic.js
+test_map/.DS_Store
+test_map/index.html
+mapCode/staticMap/js/logic.js
+test_map/leaflet-heat.js
+test_map/logic.js
+test_map/style.css
+mapCode/staticMap/js/logic.js
