@@ -15,13 +15,15 @@ L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 // var queryUrl = "https://data.cityofchicago.org/resource/2ivx-z93u.json" //"https://data.cityofchicago.org/resource/6zsd-86xi.json?$where=date%20between'2020-01-10T12:00:00'and'2020-01-10T14:00:00'"// var link = "$where=date>'2020-01-01T12:00:00'"// url = queryUrl + link 
 
 var url = "https://data.cityofchicago.org/resource/2ivx-z93u.json"
+
 //var url ="https://data.cityofchicago.org/resource/6zsd-86xi.json?$where=date%20between%20%272020-01-10T12:00:00%27%20and%20%272020-01-10T14:00:00%27"
 
+//var url = "/dna"
 //copy the whole link with rout and 125 stuff
 //d3.csv(('name_csv'), function
 //d3.json(("/map"), function
 d3.json(url, function(response) {
-
+//d3.json(('/dna'), function (response) {
  const beachs = {};
 
  for (let i=0;i< response.length ; i++){ 
