@@ -48,7 +48,7 @@
 **HTML Design**
 
 * Website Design using HTML and JavaScript (created by Nabiha)
-  * *Features:*
-  * Challenges:
-  * Successes:
+  * *Features: Bootstrap
+  * Challenges: Navbar, integrating js files 
+  * Successes: Design
     ![Website Design](screenshots/website.png)
