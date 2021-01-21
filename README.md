@@ -31,7 +31,7 @@
   * Features: Dropdown filter by beach
   * Challenges:
   * Successes:
-    ![Plotly Dashboard](screenshots/dashboard.png)
+    ![Plotly Dashboard](screenshots/dashboard_weather_tooltip.png)
 
 ---
 
