@@ -24,6 +24,7 @@ color: whitesmoke;
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   <script type="text/javascript" src="../static/js/config.js"></script>
   <script type="text/javascript" src="../static/js/data.js"></script>
   <script type="text/javascript" src="../static/js/weather.js"></script>
@@ -55,14 +56,12 @@ color: whitesmoke;
     </div>
     <div class="col-sm-8 text-left"> 
       <h1>Chicago Beach Weather Dashboard </h1>
-    
       <hr>
-      
-      <div class="grid-container">
-         
+      <div class="grid-container" >
+
         <header class="header"></header>
-        <aside class="sidenav"></aside>
-        <main class="main"></main>
+        <aside class="sidenav" id="weather"></aside>
+        <main class="main" id="myChart"></main>
         <footer class="footer"></footer>
       </div>
       <style>
@@ -74,7 +73,7 @@ color: whitesmoke;
     "sidenav header"
     "sidenav main"
     "sidenav footer";
-  height: 100vh;
+  height: 70vh;
 }
 
 .header {
@@ -85,6 +84,10 @@ color: whitesmoke;
 .sidenav {
   grid-area: sidenav;
   background-color: #394263;
+  color: white;
+  padding: 10 px;
+  text-align: center;
+  justify-content:center;
 }
 
 .main {
