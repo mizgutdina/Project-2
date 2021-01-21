@@ -1,9 +1,10 @@
 # View mongo database and collection in compass
-
 import requests
 from flask import Flask, jsonify , render_template, redirect
 import pymongo
 from bson import json_util
+from flask_table import Table, Col
+
 
 # Create an instance of Flask
 app = Flask(__name__)
@@ -88,6 +89,14 @@ def plot():
 @app.route("/map")
 def maping():
     return render_template("map.html")
+
+@app.route("/data")
+def data():
+    
+    # Store collection in a list
+    predictions = db.prediction.find()
+
+    return render_template("data.html", predictions=predictions,classes="table table-striped")
 
 if __name__ == "__main__":
     app.run(debug=True)
