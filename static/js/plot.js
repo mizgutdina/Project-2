@@ -2,7 +2,7 @@
 
 var readings = [];
 var timestamps = [];
-var beachName = "Oakwood"; //default beach name
+var beachName = "12th Street"; //default beach name
 var query_url = "/dna"
 
 function buildPlot(){
@@ -49,6 +49,8 @@ function buildPlot(){
 
 // reads bacteria levels and timestamps from returned JSON
 function getData(data){
+    readings = [];
+    timestamps = [];
     data.forEach((sample) => {
         if (sample.beach === beachName) {
             readings.push(parseFloat(sample.dna_reading_mean));
@@ -60,20 +62,30 @@ function getData(data){
     readings.slice(1).slice(-100);
     timestamps.slice(1).slice(-100);
     console.log(readings);
-    console.log(timestamps);
-
+    console.log(timestamps); 
+    
     buildPlot();
 };
 
 // API call to return JSON
 d3.json(query_url).then(getData);
 
-// // selects drop down of beaches with ID: #selDataset
-// d3.selectAll("#selDataset").on("change", updateData);
 
-// // updates plot with new data based off of Beach Name
-// function updateData() {
-//    var dropDownMenu = d3.select("#selDataset");
-//    beachName = dropDownMenu.property("value");
-//    Plotly.restyle
-// }
+// selects drop down of beaches with ID: #selDataset
+d3.selectAll("#selDataset").on("change", updateData);
+
+// updates plot with new data based off of Beach Name
+function updateData() {
+   var dropDownMenu = d3.select("#selDataset");
+   beachName = dropDownMenu.property("value");
+   d3.json(query_url).then(getData);
+   var layout_update = {
+       title: `${beachName} Bacteria Levels`,
+   }
+   var data_update = [
+    {
+        x: timestamps,
+        y: readings,
+    }];
+    Plotly.update('myChart', data_update, layout_update);
+}

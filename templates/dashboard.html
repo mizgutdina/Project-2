@@ -57,6 +57,39 @@ color: whitesmoke;
     <div class="col-sm-8 text-left"> 
       <h1>Chicago Beach Weather Dashboard </h1>
       <hr>
+      <select id="selDataset" onchange="updateData(this.value)">
+        <option value = "12th Street">12th Street</option>
+        <option value = "57th Street">57th Street</option>
+        <option value = "63rd Street">63rd Street</option>
+        <option value = "Calumet">Calumet</option>
+        <option value = "Columbia">Columbia</option>
+        <option value = "Fargo">Fargo</option>
+        <option value = "Foster">Foster</option>
+        <option value = "Hartigan">Hartigan</option>
+        <option value = "Hartigan (Albion)">Hartigan (Albion)</option>
+        <option value = "Howard">Howard</option>
+        <option value = "Humboldt">Humboldt</option>
+        <option value = "Juneway">Juneway</option>
+        <option value = "Lane">Lane</option>
+        <option value = "Leone">Leone</option>
+        <option value = "Loyola">Loyola</option>
+        <option value = "Margaret T Burroughs">Margaret T Burroughs</option>
+        <option value = "Margaret T Burroughs (31st)">Margaret T Burroughs (31st)</option>
+        <option value = "Marion Mahony Griffin">Marion Mahony Griffin</option>
+        <option value = "Marion Mahony Griffin (Jarvis)">Marion Mahony Griffin (Jarvis)</option>
+        <option value = "Montrose">Montrose</option>
+        <option value = "Montrose Dog">Montrose Dog</option>
+        <option value = "North Avenue">North Avenue</option>
+        <option value = "North Shore">North Shore</option>
+        <option value = "Oak Street">Oak Street</option>
+        <option value = "Oakwood">Oakwood</option>
+        <option value = "Ohio Street">Ohio Street</option>
+        <option value = "Osterman">Osterman</option>
+        <option value = "Rainbow">Rainbow</option>
+        <option value = "Rogers">Rogers</option>
+        <option value = "South Shore">South Shore</option>      
+      </select>
+      
       <div class="grid-container" >
 
         <header class="header"></header>
@@ -87,7 +120,6 @@ color: whitesmoke;
   color: white;
   padding: 10 px;
   text-align: center;
-  justify-content:center;
 }
 
 .main {
