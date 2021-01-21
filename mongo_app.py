@@ -1,9 +1,10 @@
-# Import Dependencies
+# Dependencies
 import requests
 from flask import Flask, jsonify , render_template, redirect
 import pymongo
 from bson import json_util
 from flask_table import Table, Col
+
 
 # Create an instance of Flask
 app = Flask(__name__)
@@ -56,7 +57,7 @@ db.prediction.drop()
 db.prediction.insert_many(e_coli)
 predictions = list(db.prediction.find())
 
-# Routes
+# Route to render main.html template from Mongo database
 @app.route("/")
 def main():
     return "Hi"
@@ -83,12 +84,11 @@ def test():
 
 @app.route("/graph")
 def plot():
-
-    return render_template("table.html")
+    return render_template("dashboard.html")
 
 @app.route("/map")
 def maping():
-    return render_template("indexMap.html")
+    return render_template("map.html")
 
 @app.route("/data")
 def data():
@@ -97,7 +97,7 @@ def data():
     predictions = db.prediction.find()
 
     # Convert dataframe into HTML format, add bootstrap
-    return render_template("data.html", predictions=predictions,classes="table table-striped")    
+    return render_template("data.html", predictions=predictions,classes="table table-striped")
 
 if __name__ == "__main__":
     app.run(debug=True)
