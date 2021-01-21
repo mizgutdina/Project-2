@@ -38,9 +38,9 @@
 #### **Leaflet & Map**
 
 * Map using Leaflet and JavaScript (led by Medina)
-  * *Features: Markers for each beach with popup Info*
-  * Challenges:
-  * Successes:
+  * *Features: Markers for each beach with popup info*
+  * Challenges: Varying the intensity of heatmap using the mean DNA sample reading as an intensity argument
+  * Successes: Map displaying 20 Chicago beaches and popups with water safety information 
     ![Leaflet Map](screenshots/map.png)
 
 ---
