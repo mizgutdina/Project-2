@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <header class="banner">
+        <h1>Water Quality Project</h1>
+        <p> Chicago Beaches </p>
+        <style>
+            header.banner {
+background-image: url("imgs/beach.jpg");
+background-size: cover;
+height: 168px;
+width: 100%;
+padding: 30px;
+font-size:x-large;
+color: whitesmoke;
+}
+        </style>
+    </header>
+  <title>Chicago Beach Conditions</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script type="text/javascript" src="../static/js/config.js"></script>
+  <script type="text/javascript" src="../static/js/data.js"></script>
+  <script type="text/javascript" src="../static/js/weather.js"></script>
+  <script type="text/javascript" src="../static/js/plot.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+    
+      <a class="navbar-brand" href="#">Data Portal</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">Beach Lab Data</a></li>
+        <li><a href="#">Weather Data</a></li>
+        <li><a href="#">Beach Safety</a></li> 
+     
+    </div>
+  </div>
+</nav>
+  
+<div class="container-fluid text-center">    
+  <div class="row content">
+    <div class="col-sm-2 sidenav">
+      
+    </div>
+    <div class="col-sm-8 text-left"> 
+      <h1>Chicago Beach Weather Dashboard </h1>
+      <hr>
+      <div class="grid-container" >
+
+        <header class="header"></header>
+        <aside class="sidenav" id="weather"></aside>
+        <main class="main" id="myChart"></main>
+        <footer class="footer"></footer>
+      </div>
+      <style>
+.grid-container {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  grid-template-rows: 50px 1fr 50px;
+  grid-template-areas:
+    "sidenav header"
+    "sidenav main"
+    "sidenav footer";
+  height: 70vh;
+}
+
+.header {
+  grid-area: header;
+  background-color: #648ca6;
+}
+
+.sidenav {
+  grid-area: sidenav;
+  background-color: #394263;
+  color: white;
+  padding: 10 px;
+  text-align: center;
+  justify-content:center;
+}
+
+.main {
+  grid-area: main;
+  background-color: #8fd4d9;
+}
+
+.footer {
+  grid-area: footer;
+  background-color: #648ca6;
+}
+
+      </style>
+
+
+   
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="container-fluid text-center">
+  <p>Chicago Beach Data</p>
+</footer>
+
+</body>
+</html>
+ <style>
+   
