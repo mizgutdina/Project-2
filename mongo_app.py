@@ -60,7 +60,7 @@ predictions = list(db.prediction.find())
 # Route to render main.html template from Mongo database
 @app.route("/")
 def main():
-    return "Hi"
+    return render_template("landing.html")
 
 @app.route("/water")
 def water():
