@@ -28,9 +28,9 @@
 #### **Plotly & Dashboard**
 
 * Chart using Plotly and JavaScript (led by Alex)
-  * Features: Dropdown filter by beach
-  * Challenges:
-  * Successes:
+  * Features: Dropdown filter by beach; Highlights when bacteria counts reach dangerous levels; Displays current weather
+  * Challenges: Incorporating dropdown menu to automatically update chart; trimming data down to reasonable size to plot
+  * Successes: Flexible plots that fit well on the web page; Filtering JSON arrays using forEach;  
     ![Plotly Dashboard](screenshots/dashboard_weather_tooltip.png)
 
 ---
