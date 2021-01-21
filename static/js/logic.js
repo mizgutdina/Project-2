@@ -1,3 +1,5 @@
+API_KEY = "sk.eyJ1IjoiZGlhbmVtYXJpZWFrIiwiYSI6ImNrazZ4amRsODA3OGsycm8wZ2QxMjZjbzMifQ.-L8EYxu0CinbP8GSKFGbMw"
+
 var myMap = L.map("map", { 
   center: [41.918774494165326, -87.5023135313888], 
   zoom: 11
