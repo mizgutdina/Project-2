@@ -25,6 +25,7 @@ color: whitesmoke;
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <script src="https://d3js.org/d3.v5.min.js"></script>
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="https://unpkg.com/@popperjs/core@2"></script>
   <script type="text/javascript" src="../static/js/config.js"></script>
   <script type="text/javascript" src="../static/js/data.js"></script>
   <script type="text/javascript" src="../static/js/weather.js"></script>
@@ -90,47 +91,98 @@ color: whitesmoke;
         <option value = "South Shore">South Shore</option>      
       </select>
       
-      <div class="grid-container" >
-
+      <div class="grid-container">
         <header class="header"></header>
+        
         <aside class="sidenav" id="weather"></aside>
         <main class="main" id="myChart"></main>
-        <footer class="footer"></footer>
+        
+        <footer class="footer">
+          <div id="button" aria-describedby="tooltip"><a href="/map" id="maplink">Map Link</a></div>
+        </footer>
       </div>
       <style>
-.grid-container {
-  display: grid;
-  grid-template-columns: 240px 1fr;
-  grid-template-rows: 50px 1fr 50px;
-  grid-template-areas:
-    "sidenav header"
-    "sidenav main"
-    "sidenav footer";
-  height: 70vh;
-}
+        .grid-container {
+          display: grid;
+          grid-template-columns: 240px 1fr;
+          grid-template-rows: 50px 1fr 50px;
+          grid-template-areas:
+            "sidenav header"
+            "sidenav main"
+            "sidenav footer";
+          height: 70vh;
+        }
 
-.header {
-  grid-area: header;
-  background-color: #648ca6;
-}
+        .header {
+          grid-area: header;
+          background-color: #648ca6;
+        }
 
-.sidenav {
-  grid-area: sidenav;
-  background-color: #394263;
-  color: white;
-  padding: 10 px;
-  text-align: center;
-}
+        .sidenav {
+          grid-area: sidenav;
+          background-color: #394263;
+          color: white;
+          padding: 10 px;
+          text-align: center;
+        }
 
-.main {
-  grid-area: main;
-  background-color: #8fd4d9;
-}
+        .main {
+          grid-area: main;
+          background-color: #8fd4d9;
+        }
 
-.footer {
-  grid-area: footer;
-  background-color: #648ca6;
-}
+        .footer {
+          grid-area: footer;
+          background-color: #648ca6;
+        }
+
+        #tooltip {
+          background-color: black;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 13px;
+            display: none;
+        }
+        #tooltip[data-show] {
+          display: block;
+        }
+        #tooltip[data-popper-placement^='top'] > #arrow {
+          bottom: -4px;
+        }
+
+        #tooltip[data-popper-placement^='bottom'] > #arrow {
+          top: -4px;
+        }
+
+        #tooltip[data-popper-placement^='left'] > #arrow {
+          right: -4px;
+        }
+
+        #tooltip[data-popper-placement^='right'] > #arrow {
+          left: -4px;
+        }
+
+        #maplink{
+          color: white;
+        }
+
+        #button {
+          text-align: right;
+        }
+        #arrow,
+        #arrow::before {
+          position: absolute;
+          width: 8px;
+          height: 8px;
+          z-index: -1;
+        }
+
+        #arrow::before {
+          content: '';
+          transform: rotate(45deg);
+          background: #333;
+        }
 
       </style>
 
@@ -142,9 +194,52 @@ color: whitesmoke;
   </div>
 </div>
 
+
+
 <footer class="container-fluid text-center">
   <p>Chicago Beach Data</p>
 </footer>
+<div id="tooltip" role="tooltip">
+  View this data on a map!
+  <div id="arrow" data-popper-arrow></div>
+
+</div>
+<script>
+  const button = document.querySelector('#button');
+  const tooltip = document.querySelector('#tooltip');
+
+  // Pass the button, the tooltip, and some options, and Popper will do the
+  // magic positioning for you:
+  Popper.createPopper(button, tooltip, {
+    placement: 'right',
+    modifiers: [
+    {
+      name: 'offset',
+      options: {
+        offset: [0, 8],
+      },
+    },
+    ]
+  });
+  function show() {
+  tooltip.setAttribute('data-show', '');
+  }
+
+  function hide() {
+    tooltip.removeAttribute('data-show');
+  }
+
+  const showEvents = ['mouseenter', 'focus'];
+  const hideEvents = ['mouseleave', 'blur'];
+
+  showEvents.forEach(event => {
+    button.addEventListener(event, show);
+  });
+
+  hideEvents.forEach(event => {
+    button.addEventListener(event, hide);
+  });
+</script>
 
 </body>
 </html>
