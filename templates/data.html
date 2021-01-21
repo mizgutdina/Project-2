@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chicago Beach Lab Data</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Our CSS  -->
+    <link rel="stylesheet" href="./static/css/style.css" />
+    <style>
+        .jumbotron {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="banner">
+        <h1>Water Quality Project</h1>
+        <p> Chicago Beaches </p>
+        <style>
+            header.banner {
+background-image: url("static/imgs/beach.jpg");
+background-size: cover;
+height: 168px;
+width: 100%;
+padding: 30px;
+font-size:x-large;
+color: whitesmoke;
+}
+        </style>
+    </header>
+</body>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+<style>
+.navbar {
+  margin-bottom: 0;
+  border-radius: 0;
+}
+
+.row.content {height: 450px}
+
+.sidenav {
+  padding-top: 20px;
+  background-color: #f1f1f1;
+  height: 100%;
+}
+
+footer {
+  background-color: #555;
+  color: white;
+  padding: 15px;
+}
+
+.h3{
+    padding: 15px;
+    font-size: medium;
+}
+  .row.content {height:auto;} 
+
+
+.container {
+position: relative;
+}
+
+/* Bottom right text */
+.text-block {
+position: absolute;
+bottom: 20px;
+right: 20px;
+background-color: black;
+color: white;
+padding-left: 20px;
+padding-right: 20px;
+}
+
+div.jumbotron{
+    background-color: black;
+    color: whitesmoke;
+}
+
+table{
+    background-color: gray;
+    color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+}
+
+th{
+    font-size: larger;
+    font-weight: bolder;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+
+}
+tbody{
+    
+    background-color: lightsteelblue;
+}
+</style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+<div class="container-fluid">
+<div class="navbar-header">
+  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>                        
+  </button>
+  <a class="navbar-brand" href="#">Data Portal</a>
+</div>
+<div class="collapse navbar-collapse" id="myNavbar">
+  <ul class="nav navbar-nav">
+    <li class="active"><a href="/">Home</a></li>
+    <li><a href="/data">Water Testing Data</a></li>
+    <li><a href="/graph">Water Safety Chart</a></li>
+    <li><a href="/map">Beach Safety Map</a></li>
+  </ul>
+  <ul class="nav navbar-nav navbar-right">
+  </ul>
+</div>
+</div>
+</nav>
+    <div class="jumbotron">
+        <h2>Chicago Beach Lab Data</h2>
+    </div>
+
+    <div class="container-fluid">
+    
+        <div class="table-responsive" id="data">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th> Date </th>
+                        <th> Beach </th>
+                        <th> Source </th>
+                        <th> Level </th>
+                        <th> Latitude </th>
+                        <th> Longitude </th> 
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for prediction in predictions %}
+                    <tr>
+                        <td>
+                            {{ prediction.date }}
+                        </td>                              
+                        <td>
+                            {{ prediction.beach_name }}
+                        </td>
+                        <td>
+                            {{ prediction.prediction_source }}
+                        </td>
+                        <td>
+                            {{ prediction.predicted_level }}
+                        </td>
+                        <td>
+                            {{ prediction.latitude }}
+                        </td>
+                        <td>
+                            {{ prediction.longitude }}
+                        </td>
+                        
+                        
+                        
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>                  
+        </div>  
+    </div>
+    
+    <!-- <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="./static/js/config.js"></script>
+    <script src="./static/js/data.js"></script>
+    <script src="./static/js/weather.js"></script>
+    <script src="./static/js/plot.js"></script> -->
+</body>
+
+</html>
