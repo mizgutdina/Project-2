@@ -2,7 +2,7 @@
 
 var readings = [];
 var timestamps = [];
-var beachName = "Foster"; //default beach name
+var beachName = "Oakwood"; //default beach name
 var query_url = "/dna"
 
 function buildPlot(){

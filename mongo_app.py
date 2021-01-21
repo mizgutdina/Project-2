@@ -83,7 +83,7 @@ def test():
 
 @app.route("/graph")
 def plot():
-    return render_template("table.html")
+    return render_template("dashboard.html")
 
 @app.route("/map")
 def maping():
